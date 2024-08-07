@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   InertiaProgress.init({ color: "#4B5563" });
-const appName = window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
   createInertiaApp({
     resolve: async name => {
       const page = (await pages[`../pages/${name}.jsx`]()).default;
