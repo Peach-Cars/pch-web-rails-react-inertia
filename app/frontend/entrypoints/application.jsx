@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   axios.defaults.headers.common['X-CSRF-Token'] = csrfToken;
 
 
-  InertiaProgress.init();
-
+  InertiaProgress.init({ color: "#4B5563" });
+const appName = window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
   createInertiaApp({
     resolve: async name => {
       const page = (await pages[`../pages/${name}.jsx`]()).default;
