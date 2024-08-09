@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@inertiajs/server": "^0.1.0",
+    "@js-from-routes/client": "^1.0.4",
     "@vitejs/plugin-react": "^4.3.1"
   }
 }

@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
   def index
     render inertia: 'Dashboard', props: {
-      name: 'Peach product team'
+      name: 'Welcome'
     }
   end
 end

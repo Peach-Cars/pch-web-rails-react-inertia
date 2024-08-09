@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: vehicles
+#
+#  id                  :integer          not null, primary key
+#  registration_number :string
+#  make                :string
+#  model               :string
+#  chassis_number      :string
+#  price               :decimal(, )
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#
+
+one:
+  registration_number: MyString
+  make: MyString
+  model: MyString
+  chassis_number: MyString
+  price: 9.99
+
+two:
+  registration_number: MyString
+  make: MyString
+  model: MyString
+  chassis_number: MyString
+  price: 9.99

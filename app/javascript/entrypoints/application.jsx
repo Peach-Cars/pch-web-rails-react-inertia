@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { createInertiaApp } from '@inertiajs/inertia-react'
 import { InertiaProgress } from '@inertiajs/progress';
 import axios from 'axios';
@@ -10,8 +10,6 @@ const pages = import.meta.glob('../pages/*.jsx')
 document.addEventListener('DOMContentLoaded', () => {
   const csrfToken = document.querySelector('meta[name=csrf-token]').content;
   axios.defaults.headers.common['X-CSRF-Token'] = csrfToken;
-
-
   InertiaProgress.init({ color: "#4B5563" });
   createInertiaApp({
     resolve: async name => {
@@ -21,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return page
     },
     setup({ el, App, props }) {
-      render(<App {...props} />, el)
+      const root = createRoot(el); 
+      root.render(<App {...props} />)
     },
   })
 });

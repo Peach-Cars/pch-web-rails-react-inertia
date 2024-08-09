@@ -38,3 +38,11 @@ node_modules
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# Ignore automatically generated js-routes files.
+/app/assets/javascripts/routes.js
+/app/assets/javascripts/routes.d.ts
+
+# Ignore automatically generated js-routes files.
+/app/javascript/routes.js
+/app/javascript/routes.d.ts
