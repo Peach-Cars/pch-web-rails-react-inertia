@@ -1,5 +1,6 @@
 import { InertiaLink } from "@inertiajs/inertia-react";
 
+
 const Layout = ({children}) => (
   <>
 <div className="min-h-full">
