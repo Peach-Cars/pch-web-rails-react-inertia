@@ -15,6 +15,9 @@ class VehiclesController < ApplicationController
     end
   
     def show
+      render inertia: 'Vehicle', props:{
+        vehicle: @vehicle
+      }
     end
   
     def new

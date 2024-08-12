@@ -1,17 +1,29 @@
+import { Head, Link } from "@inertiajs/inertia-react";
+import { vehicle_path } from "../routes";
+
 export default function Vehicles({ vehicles }) {
   return (
-    <div>
-      <h1 className="font-semibold mb-2">Vehicles</h1>
-      <div>
+    <div className="">
+      <Head>
+        <title>Buy a car in Nairobi</title>
+        <meta name="description" content="The easiest way to buy a car in Nairobi" />
+      </Head>
+      <h1 className="mb-2 font-semibold">Vehicles</h1>
+      <div className="flex gap-6">
         {vehicles.length ? (
           vehicles.map((vehicle) => (
-            <div key={vehicle.id}>
+            <Link
+              href={vehicle_path(vehicle.id)}
+              className="relative block px-5 pt-4 bg-gray-50"
+              key={vehicle.id}
+            >
+              <div className="absolute top-0 left-0 w-1/3 h-[6px] bg-pink-600"></div>
               <h3>{vehicle.registration_number}</h3>
-              <h3>{vehicle.make}</h3>
-              <h3>{vehicle.model}</h3>
-              <h3>{Number(vehicle.price)}</h3>
-              <h3>{vehicle.chassis_number}</h3>
-            </div>
+              <p>{vehicle.make}</p>
+              <p>{vehicle.model}</p>
+              <p>{Number(vehicle.price)}</p>
+              <p>{vehicle.chassis_number}</p>
+            </Link>
           ))
         ) : (
           <div>No vehicles found</div>
