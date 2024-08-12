@@ -10,8 +10,9 @@ const pages = import.meta.glob('../pages/*.jsx')
 document.addEventListener('DOMContentLoaded', () => {
   const csrfToken = document.querySelector('meta[name=csrf-token]').content;
   axios.defaults.headers.common['X-CSRF-Token'] = csrfToken;
-  InertiaProgress.init({ color: "#4B5563" });
+  InertiaProgress.init({ color: "#4B55" });
   createInertiaApp({
+    title: title => `${title} - Peach Cars`,
     resolve: async name => {
       const page = (await pages[`../pages/${name}.jsx`]()).default;
       page.layout = page.layout || Layout
